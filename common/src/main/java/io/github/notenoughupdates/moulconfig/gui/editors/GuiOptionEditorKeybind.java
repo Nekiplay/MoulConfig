@@ -92,7 +92,7 @@ public class GuiOptionEditorKeybind extends ComponentEditor {
                         editingKeycode = true;
                         return true;
                     }
-                    if (mouseX > width / 6 - 24 + 48 + 3 && mouseX < width / 6 - 24 + 48 + 13 &&
+                    if (mouseX > width / 6 - 24 + 48 - 3 && mouseX < width / 6 - 24 + 48 + 13 - 5 &&
                         mouseY > height - 7 - 14 + 3 && mouseY < height - 7 - 14 + 3 + 11) {
                         option.set(defaultKeyCode);
                         return true;
@@ -110,7 +110,7 @@ public class GuiOptionEditorKeybind extends ComponentEditor {
                         if (keyPressed.getPressed()) return true;
                         editingKeycode = false;
                         int keycode = keyPressed.getKeycode();
-                        if (keycode == KeyboardConstants.INSTANCE.getEscape() && keycode == 0) {
+                        if (keycode == KeyboardConstants.INSTANCE.getEscape() || keycode == 0) {
                             keycode = KeyboardConstants.INSTANCE.getNone();
                         }
                         option.set(keycode);
