@@ -22,7 +22,7 @@ jobs:
         with:
           name: binaries
           path: |
-            ./build/libs/*.jar
+            ./dist/*.jar
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
@@ -35,4 +35,4 @@ jobs:
             - **@Nekiplay** - Core improvements and feature implementations
             - **@KreedMan** - Features tester
           files: |
-            ./build/libs/*.jar
+            ./dist/*.jar
