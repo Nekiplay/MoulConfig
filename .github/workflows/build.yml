@@ -17,22 +17,9 @@ jobs:
           distribution: 'adopt'
       - name: Build
         run: ./gradlew build
-      - name: Upload artifacts
+      - name: Archive Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: binaries
-          path: |
-            ./dist/*.jar
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ env.APP_VERSION }}
-          name: 🌟 Hypixel Cry Fabric ${{ env.MC }} v${{ env.APP_VERSION }} 🌟
-          body: |
-            ![Downloads](https://img.shields.io/github/downloads/Nekiplay/Hypixel-Cry/v${{ env.APP_VERSION }}/total) ![Version](https://img.shields.io/badge/version-${{ env.APP_VERSION }}-blue) ![Platform](https://img.shields.io/badge/platform-Windows%20|%20Linux-orange)
-            ## 👏 Contributors Hall of Fame
-            Special thanks to our amazing contributors who made this release possible:
-            - **@Nekiplay** - Core improvements and feature implementations
-            - **@KreedMan** - Features tester
-          files: |
-            ./dist/*.jar
+          name: Artifacts
+          path: dist/
+        
